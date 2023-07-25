@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #top_section{
+            float: clear;
+            display: flex; justify-content: space-between; align-items: center;
+        }
+        #top_lable{
+            font-family: 'Courier New', Courier, monospace;
+            display: inline-block; font-size: 42px; margin: 1rem 2rem;
+        }
+        #Gologin{
+            margin-right: 20px; float: right;
+            justify-content: center; list-style: none;
+        }
+        .id{
+            float: left; border-radius: 30px; border: 0px;
+            background-color: yellowgreen; font-size: 20px; padding: 5px 10px; margin-left: 20px;
+        }
+        .id:hover{
+            cursor: pointer; background-color: yellow;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
+    <script>
+        $(function () {
+            $("#login").click(function () {
+                location.href="login.html";
+            })
+        })
+        $(function () {
+            $("#makeid").click(function () {
+                location.href="makeid.html"
+            })
+        })
+    </script>
+</head>
+<body>
+<div id="top_section">
+    <h1 id="top_lable">노벨피아</h1>
+    <ul id="Gologin">
+        <li class="id" id="login">로그인</li>
+        <li class="id" id="makeid">회원가입</li>
+    </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        html, body{
+            width: 100%; height: 100%;
+            display: flex; flex-direction: column;
+            justify-content: center; align-items: center; margin: 0;
+        }
+        h1{
+            height: 20%; margin: 0;
+            text-align: center; font-size: 45px; font-family: 'Times New Roman', Times, serif;
+            display: flex; align-items: center; justify-content: center;
+        }
+        .layout{
+            text-align: center;
+            height: 70%; width: 20%;
+            display: flex; flex-direction: column; justify-content: flex-start;
+        }
+        .layout>#id, #password, .btn{
+            box-sizing: border-box; margin: 10px;
+            height: 30px;
+        }
+        .btn:hover{
+            background-color: skyblue; color: aliceblue;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
+    <script>
+        $(function () {
+            let id=$("#id");
+            let password=$("#password");
+            $("#login").click(function () {
+                if(id.val()==""){
+                    alert("ID를 입력하세요.");
+                } else if(password.val()==""){
+                    alert("비밀번호를 입력하세요.")
+                } else{
+                    id.val("");
+                    password.val("");
+                }
+            });
+            $("#makeid").click(function () {
+                location.href="makeid.html";
+            })
+        })
+    </script>
+</head>
+<body>
+<h1>로그인</h1>
+<div class="layout">
+    <input type="text" id="id" placeholder="ID"><br>
+    <input type="password" id="password" placeholder="PASSWARD">
+    <input class="btn" id="login" type="button" value="로그인"><input class="btn" id="makeid" type="button" value="회원가입">
+</div>
+</body>
+</html>

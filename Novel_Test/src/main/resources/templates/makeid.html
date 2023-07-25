@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        html, body{
+            width: 100%; height: 100%;
+            display: flex; flex-direction: column;
+            justify-content: center; align-items: center; margin: 0;
+        }
+        h1{
+            height: 20%; margin: 0; width: 40%;
+            text-align: center; font-size: 45px; font-family: 'Times New Roman', Times, serif;
+            display: flex; align-items: center; justify-content: center;
+        }
+        .layout{
+            text-align: center;
+            height: 70%; width: 20%;
+            display: flex; flex-direction: column; justify-content: flex-start;
+        }
+        .layout>#id, #password, .btn{
+            box-sizing: border-box; margin: 10px;
+            height: 30px;
+        }
+        .btn:hover{
+            background-color: skyblue; color: aliceblue;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
+    <script>
+        $(function () {
+            let id=$("#id");
+            let password=$("#password");
+            let check=$("#check1");
+            $("#makeuser").click(function () {
+                if(id.val()==""){
+                    alert("ID를 입력하세요.");
+                } else if(password.val()==""){
+                    alert("비밀번호를 입력하세요.")
+                } else if(check.is(":checked")==false){
+                    alert("개인 정보이용에 동의해 주세요.");
+                } else {
+                    id.val("");
+                    password.val("");
+                    check.prop("checked", false);
+                }
+            });
+        })
+    </script>
+</head>
+<body>
+<h1>회원가입</h1>
+<div class="layout">
+    <input type="text" id="id" placeholder="ID"><br>
+    <input type="password" id="password" placeholder="PASSWARD">
+    <div style="text-align: right; margin-right: 10px;">
+        <input id="check1" type="checkbox"><label>개인정보 보호 동의</label>
+    </div>
+    <input class="btn" id="makeuser" type="button" value="회원가입">
+</div>
+</body>
+</html>
